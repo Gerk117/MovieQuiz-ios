@@ -8,10 +8,13 @@
 import Foundation
 
 final class StatisticServiceImplementation: StatisticService {
+    
     private enum Keys: String {
         case correct, total, bestGame, gamesCount
     }
     private let userDefaults = UserDefaults.standard
+    private var total : Int {userDefaults.integer(forKey: Keys.total.rawValue)}
+    private var correct : Int {userDefaults.integer(forKey: Keys.correct.rawValue)}
     
     var totalAccuracy: Double {
         get{
@@ -46,14 +49,15 @@ final class StatisticServiceImplementation: StatisticService {
             userDefaults.set(data, forKey: Keys.bestGame.rawValue)
         }
     }
+    
     func store(correct count: Int, total amount: Int) {
         let newGame = GameRecord(correct: count, total: amount, date: Date())
         if bestGame < newGame {
             bestGame = newGame
         }
-        userDefaults.set(userDefaults.integer(forKey: Keys.gamesCount.rawValue) + 1, forKey: Keys.gamesCount.rawValue)
-        userDefaults.set(userDefaults.integer(forKey: Keys.correct.rawValue) + count, forKey: Keys.correct.rawValue)
-        userDefaults.set(userDefaults.integer(forKey: Keys.total.rawValue) + amount, forKey: Keys.total.rawValue)
+        userDefaults.set(gamesCount + 1, forKey: Keys.gamesCount.rawValue)
+        userDefaults.set(correct + count, forKey: Keys.correct.rawValue)
+        userDefaults.set(total + amount, forKey: Keys.total.rawValue)
     }
     
 }

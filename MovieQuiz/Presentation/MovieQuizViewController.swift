@@ -54,7 +54,6 @@ final class MovieQuizViewController: UIViewController , QuestionFactoryDelegate 
         self.present(alertPresenter.createAlert(quiz: result), animated: true)
         self.currentQuestionIndex = 0
         self.correctAnswers = 0
-        self.imageView.layer.borderColor = UIColor.clear.cgColor
         
     }
     private func show(quiz step: QuizStepViewModel) {
@@ -73,8 +72,8 @@ final class MovieQuizViewController: UIViewController , QuestionFactoryDelegate 
         }
         imageView.layer.borderColor =
         isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [ weak self] in
-            guard let self = self else {return}
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            guard let self = self else { return }
             self.imageView.layer.borderColor = UIColor.clear.cgColor
             showNextQuestionOrResults()
         }
@@ -83,13 +82,13 @@ final class MovieQuizViewController: UIViewController , QuestionFactoryDelegate 
         if currentQuestionIndex == questionsAmount - 1 {
             statisticService.store(correct: correctAnswers, total: questionsAmount)
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "YYYY.MM.dd HH.MM"
+            dateFormatter.dateFormat = "dd.MM.YY HH:MM"
             let alertModel = AlertModel(
                 title: "Этот раунд окончен!",
                 message: """
                         Ваш результат: \(correctAnswers)/\(questionsAmount)
                         Kоличество сыграных квизов: \(statisticService.gamesCount)
-                        Лучший результат: \(statisticService.bestGame.correct)/\(questionsAmount) (\(dateFormatter.string(from: statisticService.bestGame.date)))
+                        Рекорд: \(statisticService.bestGame.correct)/\(questionsAmount) (\(dateFormatter.string(from: statisticService.bestGame.date)))
                         Средняя точность: \(String(format: "%.2f", statisticService.totalAccuracy * 100))%
                         """,
                 buttonText: "Сыграть ещё раз",

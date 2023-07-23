@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 class AlertPresenter {
      func createAlert(quiz result: AlertModel) -> UIAlertController {
         
