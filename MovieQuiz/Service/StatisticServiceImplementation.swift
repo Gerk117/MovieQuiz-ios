@@ -20,9 +20,6 @@ final class StatisticServiceImplementation: StatisticService {
         get{
             Double(userDefaults.double(forKey: Keys.correct.rawValue)/userDefaults.double(forKey: Keys.total.rawValue))
         }
-        set{
-            
-        }
     }
     
     var gamesCount : Int {
