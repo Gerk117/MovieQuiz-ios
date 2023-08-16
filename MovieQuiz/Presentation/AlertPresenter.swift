@@ -14,12 +14,11 @@ class AlertPresenter {
             title: result.title,
             message: result.message,
             preferredStyle: .alert)
-        
         let action = UIAlertAction(title: result.buttonText, style: .default) { _ in
             result.completion()
         }
         alert.addAction(action)
-        
         return alert
     }
 }
+
