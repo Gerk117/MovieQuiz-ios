@@ -34,6 +34,7 @@
 		C7543CC72A79E6AC00BE89BC /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7543CC62A79E6AC00BE89BC /* NetworkClient.swift */; };
 		C7543CC92A79E7CB00BE89BC /* MostPopularMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7543CC82A79E7CB00BE89BC /* MostPopularMovies.swift */; };
 		C7543CCB2A79E84300BE89BC /* MoviesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7543CCA2A79E84300BE89BC /* MoviesLoader.swift */; };
+		C79C49432A8D4F3300E4C910 /* MovieQuizViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C49422A8D4F3300E4C910 /* MovieQuizViewControllerMock.swift */; };
 		C7AD25052A537C8500BE3A29 /* YS Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7AD25032A537C8500BE3A29 /* YS Display-Bold.ttf */; };
 		C7AD25062A537C8500BE3A29 /* YS Display-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7AD25042A537C8500BE3A29 /* YS Display-Medium.ttf */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		C7543CC82A79E7CB00BE89BC /* MostPopularMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularMovies.swift; sourceTree = "<group>"; };
 		C7543CCA2A79E84300BE89BC /* MoviesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesLoader.swift; sourceTree = "<group>"; };
 		C75FCD2D2A8AEBA800771613 /* MovieQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C79C49422A8D4F3300E4C910 /* MovieQuizViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieQuizViewControllerMock.swift; sourceTree = "<group>"; };
 		C7AD25032A537C8500BE3A29 /* YS Display-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Bold.ttf"; sourceTree = "<group>"; };
 		C7AD25042A537C8500BE3A29 /* YS Display-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,6 +216,7 @@
 			children = (
 				C71374562A8AF744009636C6 /* ArrayTests.swift */,
 				C71374592A8AFC33009636C6 /* MoviesLoaderTests.swift */,
+				C79C49422A8D4F3300E4C910 /* MovieQuizViewControllerMock.swift */,
 			);
 			path = MovieQuizTests;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C71374582A8AF744009636C6 /* ArrayTests.swift in Sources */,
+				C79C49432A8D4F3300E4C910 /* MovieQuizViewControllerMock.swift in Sources */,
 				C713745A2A8AFC33009636C6 /* MoviesLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
